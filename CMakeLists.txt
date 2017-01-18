@@ -1,0 +1,17 @@
+cmake_minimum_required (VERSION 3.5)
+project (Tutorial)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Example of a simple program.
+add_executable(main main.cpp)
+
+# Example of finding the Python interpreter.
+find_package(PythonInterp REQUIRED)
+message(${PYTHON_EXECUTABLE})
+
+# Example of finding and including a Boost header library.
+find_package(Boost REQUIRED)
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+add_executable(boost_example boost_example.cpp)
